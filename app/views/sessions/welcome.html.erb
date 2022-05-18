@@ -1,0 +1,17 @@
+<h1 class="mt-3">Home</h1>
+
+<% puts current_user %>
+<% puts logged_in? %>
+
+<% if logged_in? %>
+  <p>Hi, <%= current_user.username %>, you are logged in</p>
+<% end %>
+
+<% if !logged_in? %>
+  <%= button_to "Log in", "/login", method: :get %>
+<% else %>
+  <%= button_to "Log out", "/logout", method: :delete %>
+<% end %>
+
+<%= button_to "Sign up", "/signup", method: :get %>
+
